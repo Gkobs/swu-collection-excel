@@ -96,7 +96,7 @@ func main() {
 		err = f.SetCellHyperLink("Sheet1", fmt.Sprintf("%s%d", string(rune(65+1)), row), card.FrontArt, "External", excelize.HyperlinkOpts{Display: &card.Name, Tooltip: &card.FrontArt})
 		err = f.SetCellValue("Sheet1", fmt.Sprintf("%s%d", string(rune(65+2)), row), card.Rarity)
 		err = f.SetCellValue("Sheet1", fmt.Sprintf("%s%d", string(rune(65+3)), row), card.Type)
-		err := f.SetCellFormula("Sheet1", fmt.Sprintf("%s%d", string(rune(65+5)), row), fmt.Sprintf("IF(OR(%s = \"Leader\", %s = \"Base\"), IF(%s >= 1, true, false), IF(%s >= 3, true, false))", fmt.Sprintf("%s%d", string(rune(65+3)), row), fmt.Sprintf("%s%d", string(rune(65+3)), row), fmt.Sprintf("%s%d", string(rune(65+4)), row), fmt.Sprintf("%s%d", string(rune(65+4)), row)))
+		err = f.SetCellFormula("Sheet1", fmt.Sprintf("%s%d", string(rune(65+5)), row), fmt.Sprintf("IF(OR(%s = \"Leader\", %s = \"Base\"), IF(%s >= 1, true, false), IF(%s >= 3, true, false))", fmt.Sprintf("%s%d", string(rune(65+3)), row), fmt.Sprintf("%s%d", string(rune(65+3)), row), fmt.Sprintf("%s%d", string(rune(65+4)), row), fmt.Sprintf("%s%d", string(rune(65+4)), row)))
 		if err != nil {
 			log.Fatal(err)
 		}
