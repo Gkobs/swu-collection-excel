@@ -45,7 +45,7 @@ type Card struct {
 
 func main() {
 
-	set := "lof"
+	set := "sor"
 	d, err := http.Get(fmt.Sprintf("https://api.swu-db.com/cards/%v", set))
 	if err != nil {
 		log.Fatal(err)
@@ -83,7 +83,7 @@ func main() {
 		}
 	}
 
-	indexLimit := 263
+	indexLimit := 251
 	rowOffset := 2
 	for i, card := range cards {
 		if i > indexLimit {
@@ -101,11 +101,6 @@ func main() {
 			log.Fatal(err)
 		}
 	}
-
-	//dir, err := os.Getwd()
-	//if err != nil {
-	//	log.Fatal(err)
-	//}
 
 	err = f.SaveAs(fmt.Sprintf("./files/%s.xlsx", set))
 	if err != nil {
