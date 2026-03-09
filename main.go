@@ -45,7 +45,7 @@ type Card struct {
 
 func main() {
 
-	set := "sec"
+	set := "law"
 	d, err := http.Get(fmt.Sprintf("https://api.swu-db.com/cards/%v", set))
 	if err != nil {
 		log.Fatal(err)
